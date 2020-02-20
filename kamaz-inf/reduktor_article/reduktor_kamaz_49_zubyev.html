@@ -1,0 +1,182 @@
+---
+layout: default
+title: Редуктор КАМАЗ на 49 зубьев среднего и заднего моста 
+metadesc: Продаем редуктор КамАЗ с цилиндрической парой 47/15. Большой выбор моделей, низкие цены и гарантия качества. Характеристики и применимость редукторов КамАЗ.
+metakeywords: редуктор КамАЗ 49 зубьев
+h1: Редукторы КамАЗ 49 зубьев
+h2: Редукторы КамАЗ на 49 зубьев
+---
+<!-- Раздел карточки продукта --------------------------- -->
+<div class="col-md-3">
+    <h3 style="padding-top: 0px;">Редукторы</h3>
+    <table class="table">
+            {% for item in site.data.reductor %}
+            {% if item.z49 == "true" %}
+            <tr><td><span> <a href="/kamaz-inf/reduktor/{{ item.url }}.html" class="underline" style="font-size: 0.85em;"> {{ item.model }} </a><span></span></td></tr>
+            {% endif %}
+            {% endfor %}       
+        <!-- <tr><td> <a href="#43253-2402011-60" class="underline"> 43253-2402011-60</a> </td></tr> -->
+ 
+    
+    </table>
+    <img src="/assets/img/avto_models/kamaz_65115_small.jpg"/ style="max-width: 100%; padding-top: 0px;">
+</div>
+<div class="col-md-9">
+    <div class="alert alert-info">
+        <p>
+            Редукторы с цилиндрической парой 49/13 зубьев являются самыми распространёнными из производимых для автомобилей КАМАЗ.
+            Данная цилиндрическая пара считается самой сбалансированной и универсальной. Применяется практический на всех моделях
+            КАМАЗ, в том числе и на ранних моделях таких как 5320, 55102 и 54112. <br>
+            Передаточное число 6.53
+        </p>
+        <p>
+            Артикул редуктора КАМАЗ на 49 зубьев оканчивается на -10.<br>
+
+            Например, <br>
+            - задний редуктор 49 зубьев 5320-2402010-10,<br>
+            - средний редуктор 49 зубьев 5320-2502010-10.
+        </p>
+        <p>
+            Существует свыше десяти видов этого устройства. В ходовой части машин старого образца, например в КамАЗ 5320,
+            применялись полуоси на 16 шлицов. Соответственно и полуосевые шестерни, установленные на редуктор КамАЗ 49 зубьев, имеют
+            по 16 пазов под шлицы. Более поздние модели, образца Евро — класса, уже рассчитаны на 20 шлицов и не подходят для
+            монтажа на старые грузовики.
+          
+        </p>
+
+        <p>Для того чтобы не ошибиться, с выбором необходимого механического устройства, вы можете использовать артикул. Найти
+            его вы сможете на большой шестерне главной пары.</p>
+        
+    </div>
+    <div class="w-100 text-right" >
+        <a href="/kamaz-inf/reduktor_article/skolko_zubieb_reduktor.html" class="btn btn-primary "style="font-size: 1.0em;"> Как определить сколько зубьев в редукторе </a>
+        <a href="/kamaz-inf/reduktor_article/index.html" class="btn btn-primary "style="font-size: 1.0em; "> Информация об редукторах </a>
+    </div>
+</div>
+
+<!-- каталог  -->
+<div class="row" id="models_container">
+    {% for item in site.data.reductor %}
+    {% if item.z49 == "true" %}
+    <div class="engine col-md-6 col-lg-6 col-xs-12">
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <a href="/kamaz-inf/reduktor/{{ item.url }}.html" >
+                    <span style="font-size:1.2em;">
+                        &nbsp;•&nbsp;{{ item.name }}
+                    </span></a>
+            </div>
+            <div class="col-md-4">
+                <a href="/kamaz-inf/reduktor/{{ item.url }}.html" >
+                    <img src="/assets/img/reductor/{{item.img}}" alt="{{item.name}}" class="img-thumbnail"
+                        style="border: none;" />
+                </a>
+            </div>
+            <div class="col-md-8">
+                <table class="table-card-sm text-left">
+                    <tr>
+                        <td colspan="2">
+    
+                            <span style="color:gray;float: right;">{{ item.model }} </span>
+                        </td>
+                    </tr>
+                    {%- if item.price1 != "" -%}
+                    <tr>
+                        <td>{{ item.price1_n }}</td>
+                        <td style="width:28%;text-align: right;"><span style="text-align: right;">{{ item.price1 }}</span>
+                        </td>
+                    </tr>
+                    {%- endif -%}
+    
+                    {%- if item.price2 != "" -%}
+                    <tr>
+                        <td>{{ item.price2_n }}</td>
+                        <td style="text-align: right;"><span>{{ item.price2 }}</span></td>
+                    </tr>
+                    {%- endif -%}
+    
+                    {%- if item.price3  != "" -%}
+                    <tr>
+                        <td>{{ item.price3_n }}</td>
+                        <td style="text-align: right;"><span>{{ item.price3 }}</span></td>
+                    </tr>
+                    {%- endif -%}
+
+                    {%- if item.price4  != "" -%}
+                    <tr>
+                        <td>{{ item.price4_n }}</td>
+                        <td style="text-align: right;"><span>{{ item.price4 }}</span></td>
+                    </tr>
+                    {%- endif -%}
+    
+                    {%- if item.zubya != "" -%}
+                    <tr>
+                        <td colspan="2"> зубьев {{ item.zubya }} </td>
+                    </tr>
+                    {%- endif -%}
+    
+    
+                    {%- if item.prim -%}
+                    <tr>
+                        <td colspan="2"> для {{ item.prim }} </td>
+                    </tr>
+                    {%- endif -%}
+    
+                    <tr>
+                        <td colspan="2" style="font-size: 92%;">{{ item.desc }}
+    
+                            {%- if item.url -%}
+                            <a href="/kamaz-inf/reduktor/{{ item.url }}.html"> подробнее... </a>
+    
+                            {%- endif -%}
+                        </td>
+                    </tr>
+                </table>
+    
+    
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+
+
+
+<h3>Описание</h3>
+<p>
+    Редуктор среднего моста КамАЗ на 49 зубьев имеет ряд технических отличий, в сравнении с задним:
+    - На данном механическом узле предусмотрена сдвоенная главная шестерня (ГП) со специальным проходным валом.
+    - Ведущая шестерня установлена непосредственно в горловине картера, и зажат между двумя коническими подшипниками. 
+</p>
+<p>
+    Редуктор заднего моста КамАЗ 49 зубьев является ведущим. Крутящий момент устройство получает через главную шестерню
+    среднего механического агрегатного узла. В отличие от среднего, задний редуктор КАМАЗ на 49 зубьев имеет главную
+    шестерню (ГП) с укороченной ступицей.
+</p>
+
+<h3>Общее устройство</h3>
+<p>
+    Задний редуктор КамАЗ 49 зубьев состоит из компонентов:
+    — корпус устройства или картер;
+    — главная передача;
+    — дифференциал;
+    — конические и цилиндрические шестерни подшипники;
+    — регулировочные прокладки и шайбы;
+    — сателлиты, а также другие компоненты.
+    
+</p>
+<hr>
+
+
+
+
+{% include kupite_u_nas.html %}
+<div style="height: 100px;">&nbsp;</div>
+
+
+<img src="/assets/img/reductor/kamaz_reductor_01.jpg" alt="Редукторы КамАЗ"/>
+<img src="/assets/img/reductor/kamaz_reductor_remont_01.jpg" alt="Редукторы КамАЗ"/>
+
+</div>

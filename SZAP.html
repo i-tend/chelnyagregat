@@ -1,0 +1,199 @@
+---
+layout: default_main
+title: Запчасти СЗАП для автоприцепов Ставропольского завода - ЧелныАгрегатЦентр  
+description: Широкий выбор запчастей СЗАП  в наличии в Минеральных Водах Ставропольского края - по низким ценам с доставкой в регионы России.
+metakeywords: СЗАП Ставропольский завод автоприцепов 
+---
+
+
+  <!-- Header Area wrapper Starts -->
+  <header id="header-wrap">
+    <div class="head h-100">
+      <div class="head__inner h-100">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-inverse fixed-top scrolling-navbar">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a href="/" class="navbar-brand" style="display: contents; max-width:60%;">ЧЕЛНЫ АГРЕГАТ ЦЕНТР</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="lni-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix" id="top-submenu">
+                <li class="nav-item active">
+                  <a class="nav-link scroll-link" href="#hero-area">
+                    Начало
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#catalog">
+                    Каталог
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#pricing">
+                    Цены
+                  </a>
+                </li>
+                <!-- задняя часть меню подгружается  -->
+                {% include top-submenu.html %}
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Hero Area Start -->
+        <div id="hero-area" class="hero-area-bg">
+          <div class="container w-100">
+            <div class="row">
+              <div class="col-md-8 col-xs-12">
+                <div class="contents">
+                  <ul>
+                    <li style="margin-bottom:0px;">
+                      <h1 class="title text-left w-100"> Запчасти для автоприцепов Ставропольского завода СЗАП </h1>
+                    </li>
+                    <li style="margin-top:0px;">
+                      <h2 class="title w-100">от надежного поставщика </h2>
+                    </li>
+                    <li>&nbsp;</li>
+                    <li><i class="lni-check-mark-circle"></i> &nbsp;&nbsp; В наличии в
+                      Наб.Челнах, Москве и Краснодаре</li>
+                    <li><i class="lni-check-mark-circle"></i>&nbsp;&nbsp;10 лет на рынке
+                    </li>
+                    <li><i class="lni-check-mark-circle"></i> &nbsp;&nbsp;Гарантия на все
+                      прицепы</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-xs-12 text-right">
+                {% capture data_group %}
+                  [""]
+                {% endcapture %}
+                {% capture data_list %}
+                  [""]
+                {% endcapture %}
+                {% include header_zakaz.html list=data_list group=data_group %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero Area End -->
+
+  </header>
+
+  <section id="catalog" class="section-padding">
+    <div class="container text-center">
+      <div class="section-header text-center">
+        <h2 class="section-title ">Запчасти СЗАП</h2>
+        <div class="shape wow fadeInDown"></div>
+      </div>
+      <div class="row" id="models_container">
+        <!-- Services item -->
+
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+
+          <div class="alert alert-info text-center">Если вы не нашли нужную Вам деталь, то позвоните: <a href="">+7 (938)
+              358-30-07 </a>. Мы сможем подобрать Вам нужную запчасть<br> производства ОАО Автоприцеп – КамАЗ.
+            
+            <br>
+            <br>
+            Сможем дать лучшую гарантию.<br> Нам доверяют более 5000 клиентов по всей России
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    var mods;
+    $.getJSON("data/szap.json", function (json) {
+      mods = json;
+      if (mods == null || mods.length == 0) return;
+      var source = document.getElementById("dvigatel-item").innerHTML;
+      var template = Handlebars.compile(source);
+      for (let index = 0; index < mods.length; index++) {
+        var rez1 = mods[index];
+        if (rez1.id < 0) continue;
+        var html1 = template(rez1);
+        $("#models_container").append(html1);
+      }
+    });
+    function show_dvigatel_popup(id) {
+      var source = document.getElementById("dvigatel-popup-template").innerHTML;
+      var template = Handlebars.compile(source);
+      if (mods == null || mods.length == 0) return;
+      var rez = mods.find(x => x.id == id);
+      if (rez != null) {
+        var html = template(rez);
+        $("#popup_container").html("");
+        $("#popup_container").append(html);
+        $('#engineModal_one').modal('show');
+      }
+    }
+  </script>
+
+
+  <div id="popup_container"></div>
+
+  <!-- Modal windows -------------------------->
+  <script id="dvigatel-item" type="text/x-handlebars-template">
+    <div class="szap col-md-6 col-lg-4 col-xs-6">
+        <a href="javascript:" onclick="show_dvigatel_popup({{id}});" class="nal-link" data-toggle="modal">
+          <div class="image-szap">
+            <div class="image-img">
+              <img src="assets/img/SZAP/{{photo}}" alt="{{name}}"
+              class="img-thumbnail" />
+            </div>
+            <div class="image-text">
+              <h4>{{name}}</h4><h5><strong>артикул:</strong> {{article}}<br><strong>стоимость:</strong> {{price}} руб.</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+  </script>
+
+
+  
+  <section>
+  <div class="row text-left articles">
+    <div class="col-md-1"> </div>
+    <div class="col-md-10">
+      ОАО «Автоприцеп - КамАЗ» (СЗАП), расположенное в Ставрополе, является одним из самых крупных
+      производителей прицепов для грузовой и специализированной техники. Продукция СЗАП пользуется спросом среди
+      строительных, транспортных компаний, коммунальных хозяйств, сельскохозяйственных предприятий и других организаций,
+      эксплуатирующих спецтехнику. Самосвальные прицепы СЗАП 8543 и 8551, бортовые 8357, 8305 и 83053,
+      полуприцепы-контейнеровозы 9905, 9908 и 9915 - наиболее известные среди потребителей модели дочернего предприятия
+      КамАЗ.<br><br>
+
+      ЗАПЧАСТИ СЗАП
+      Увеличить срок службы, заменить изношенные или вышедшие из строя детали вы сможете, используя оригинальные
+      запчасти СЗАП.<br><br>
+
+      В ассортименте представлены запчасти для прицепов СЗАП и полуприцепов СЗАП, наиболее распространенных и известных
+      в России моделей. Ознакомиться с ними вы сможете, заглянув в каталог.
+    </div>
+
+    <div class="row text-left articles">
+      <div class="col-md-1"></div>
+      <div class="col-md-10" id="kupite">
+        {% include kupite_u_nas.html %}
+      </div>
+    </div>
+  </div>
+
+  </section>
+      {% include advantages.html %}

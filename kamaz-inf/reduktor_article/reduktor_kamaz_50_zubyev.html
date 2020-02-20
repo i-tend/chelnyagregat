@@ -1,0 +1,180 @@
+---
+layout: default
+title: Редуктор КАМАЗ на 50 зубьев среднего и заднего моста 
+metadesc: Продаем редуктор КамАЗ с цилиндрической парой 50/12. Большой выбор моделей, низкие цены и гарантия качества. Характеристики и применимость редукторов КамАЗ.
+metakeywords: редуктор КамАЗ 50 зубьев
+h1: Редукторы КамАЗ 50 зубьев
+h2: Редукторы КамАЗ на 50 зубьев
+---
+<!-- Раздел карточки продукта --------------------------- -->
+<div class="col-md-3">
+    <h3 style="padding-top: 0px;">Редукторы</h3>
+    <table class="table">
+            {% for item in site.data.reductor %}
+            {% if item.z50 == "true" %}
+            <tr><td><span> <a href="/kamaz-inf/reduktor/{{ item.url }}.html" class="underline" style="font-size: 0.85em;"> {{ item.model }} </a><span></span></td></tr>
+            {% endif %}
+            {% endfor %}       
+        <!-- <tr><td> <a href="#43253-2402011-60" class="underline"> 43253-2402011-60</a> </td></tr> -->
+ 
+    
+    </table>
+    <img src="/assets/img/avto_models/kamaz_65115_small.jpg"/ style="max-width: 100%; padding-top: 0px;">
+</div>
+<div class="col-md-9">
+    <div class="alert alert-info">
+        <p>
+            Редукторы с цилиндрической парой 50/12 зубьев используются главным образом на автомобилях повышенной проходимости с
+            колесной формулой 6х6. Например, на вездеходах 4310, 43118, 65111 и на более ранних моделях самосвалов КАМАЗ 5511, 55111
+            на которых была установлена коробка переключения передач без делителя.
+            <br>
+            Средний редуктор КАМАЗ на 50 зубьев применяется для установки на КАМАЗ 4310. Передаточное число 7.22.
+        </p>
+        <p>Выпускается в двух образцах:<br>
+            - старого образца. Полуось на 16 шлицов. Часто встречается на таких моделях как 4310.<br>
+            - евро, нового образца на 20 шлицов (встречается на таких моделях как 43114 и 43118).
+        </p>
+        <p>
+            Артикул редуктора КАМАЗ на 50 зубьев оканчивается на -20.<br>
+        </p>
+        <p>
+          
+        </p>
+
+        <p>Для того чтобы не ошибиться, с выбором необходимого механического устройства, вы можете использовать артикул. Найти
+            его вы сможете на большой шестерне главной пары.</p>
+        
+    </div>
+    <div class="w-100 text-right" >
+        <a href="/kamaz-inf/reduktor_article/skolko_zubieb_reduktor.html" class="btn btn-primary "style="font-size: 1.0em;"> Как определить сколько зубьев в редукторе </a>
+        <a href="/kamaz-inf/reduktor_article/index.html" class="btn btn-primary "style="font-size: 1.0em; "> Информация об редукторах </a>
+    </div>
+</div>
+
+<!-- каталог  -->
+<div class="row" id="models_container">
+    {% for item in site.data.reductor %}
+    {% if item.z50 == "true" %}
+    <div class="engine col-md-6 col-lg-6 col-xs-12">
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <a href="/kamaz-inf/reduktor/{{ item.url }}.html" >
+                    <span style="font-size:1.2em;">
+                        &nbsp;•&nbsp;{{ item.name }}
+                    </span></a>
+            </div>
+            <div class="col-md-4">
+                <a href="/kamaz-inf/reduktor/{{ item.url }}.html" >
+                    <img src="/assets/img/reductor/{{item.img}}" alt="{{item.name}}" class="img-thumbnail"
+                        style="border: none;" />
+                </a>
+            </div>
+            <div class="col-md-8">
+                <table class="table-card-sm text-left">
+                    <tr>
+                        <td colspan="2">
+    
+                            <span style="color:gray;float: right;">{{ item.model }} </span>
+                        </td>
+                    </tr>
+                    {%- if item.price1 != "" -%}
+                    <tr>
+                        <td>{{ item.price1_n }}</td>
+                        <td style="width:28%;text-align: right;"><span style="text-align: right;">{{ item.price1 }}</span>
+                        </td>
+                    </tr>
+                    {%- endif -%}
+    
+                    {%- if item.price2 != "" -%}
+                    <tr>
+                        <td>{{ item.price2_n }}</td>
+                        <td style="text-align: right;"><span>{{ item.price2 }}</span></td>
+                    </tr>
+                    {%- endif -%}
+    
+                    {%- if item.price3  != "" -%}
+                    <tr>
+                        <td>{{ item.price3_n }}</td>
+                        <td style="text-align: right;"><span>{{ item.price3 }}</span></td>
+                    </tr>
+                    {%- endif -%}
+
+                    {%- if item.price4  != "" -%}
+                    <tr>
+                        <td>{{ item.price4_n }}</td>
+                        <td style="text-align: right;"><span>{{ item.price4 }}</span></td>
+                    </tr>
+                    {%- endif -%}
+    
+                    {%- if item.zubya != "" -%}
+                    <tr>
+                        <td colspan="2"> зубьев {{ item.zubya }} </td>
+                    </tr>
+                    {%- endif -%}
+    
+    
+                    {%- if item.prim -%}
+                    <tr>
+                        <td colspan="2"> для {{ item.prim }} </td>
+                    </tr>
+                    {%- endif -%}
+    
+                    <tr>
+                        <td colspan="2" style="font-size: 92%;">{{ item.desc }}
+    
+                            {%- if item.url -%}
+                            <a href="/kamaz-inf/reduktor/{{ item.url }}.html"> подробнее... </a>
+    
+                            {%- endif -%}
+                        </td>
+                    </tr>
+                </table>
+    
+    
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+
+
+
+<h3>Описание</h3>
+<p>
+    Редуктор среднего моста КамАЗ на 50 зубьев выпускается в двух модификациях:<br>
+    - с блокировкой межосевого дифференциала (МОД). Также этот механизм еще называют «поросенок». Он отвечает за блокировку
+    колес на неровных участках дорог. При включенной блокировке крутящий момент идет на те колеса, которые имеют наибольшее
+    сцепление с дорожным покрытием;<br>
+    - проходной. В таком механизме отсутствуют межосевые блокировки. <br>
+</p>
+<p>
+    Основные отличием редуктора заднего моста на 50 зубьев является наличие межосевого дифференциала.
+    Также в отличии от заднего и переднего, средний узел имеет специальные фланцы на конце ведущего вала.
+</p>
+<p>
+    В редуктор КамАЗ на 50 зубьев подойдёт трансмиссионное масло ТАД 17 или любое масло 75W-90 и 80W-90 известного производителя Castrol, Shell, MOTUL, Mobilube. 
+    
+</p>
+
+<h3>Общее устройство</h3>
+<p>
+    Задний редуктор КАМАЗ 47 зубьев состоит из компонентов:
+    — корпус устройства или картер;
+    — главная передача;
+    — дифференциал;
+    — конические и цилиндрические шестерни подшипники;
+    — регулировочные прокладки и шайбы;
+    — сателлиты, а также другие компоненты.
+    Редуктор на задний мост КАМАЗ евро 3 оборудован современной полуосью на 20 шлицов.
+</p>
+<hr>
+
+
+
+
+{% include kupite_u_nas.html %}
+<div style="height: 100px;">&nbsp;</div>
+
+</div>

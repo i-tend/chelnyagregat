@@ -1,0 +1,39 @@
+---
+layout: default
+url: region_dostavka
+title: Города доставки коробок передач КамАЗ ООО&nbsp;"ЧелныАгрегатЦентр"
+metadesc: "Коробка передач КамАЗ(КПП), стоимость, прайс, доставка по всей России. КОМ - коробки отбора мощности"
+metakeywords: "коробка передач, КПП, КОМ"
+h1: Города доставки коробок передач КамАЗ ООО&nbsp;"ЧелныАгрегатЦентр"
+h2: Мы доставляем КПП КамАЗ в следующие города
+---
+
+
+<div class="col-md-1"></div>
+<div class="col-md-10">
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Город</th>
+                <th>Адрес доставки</th>
+                <th>Примерные сроки</th>
+              </tr>
+          {% assign posts = site.categories.dostavka-korobki-kpp-kamaz | sort: 'city' %}
+          {% for post in posts  %}
+          <tr>
+            <td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.city }}</a></td>
+            <td>{{ post.delivery_point }}</td>
+            <td>{{ post.delivery_days }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <!-- <div class="col-md-4 col-xs-6">
+          <span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.city }}</a></span>
+      </div> -->
+
+      <p> <img src="/assets/img/kpp/kamaz_kpp_01.jpg" alt="КПП КамАЗ"/> </p>
+</div>
+ 
+   
