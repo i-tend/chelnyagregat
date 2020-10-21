@@ -142,13 +142,6 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                   </tr>
                   {%- endif -%}
 
-                  {%- if item.price3 and item.price3 !=""  -%}
-                  <tr>
-                    <td>{{ item.price3_n }}</td>
-                    <td style="text-align: right;"><span>{{ item.price3 }}р.</span></td>
-                  </tr>
-                  {%- endif -%}
-
                   {%- if item.price4 and item.price4 !=""  -%}
                   <tr>
                     <td>{{ item.price4_n }}</td>
@@ -166,7 +159,7 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                     <td colspan="2" style="font-size: 100%;">{{ item.desc }}
           
                         {%- if item.url -%}
-                          <a href="/kamaz-inf/motor/{{ item.url }}.html" class="btn btn-primary"> подробнее... </a>
+                          <a href="/kamaz-inf/motor/{{ item.url }}.html" class=""> подробнее... </a>
                         {%- endif -%}
                     </td>
                   </tr>
@@ -248,7 +241,7 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                       <table class="table">
                         <tr>
                           <td colspan="2">
-                            <a href="javascript:" onclick="show_dvigatel_popup({{id}});" class="nal-link" data-toggle="modal">
+                            <a href="/kamaz-inf/motor/{{ url }}.html" onclick="show_dvigatel_popup({{id}});" class="nal-link" data-toggle="modal">
                               <span style="font-size:1.4em;">
                                 {{ name }}
                                 <span style="color:gray;font-size:0.7em;">{{ model }} </span>
@@ -270,19 +263,19 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                         </tr>
                         {{/if}}
                 
-                        {{#if price3 and item.price3 !="" }}
+                        {{#if price3 }}
                           <tr>
                             <td>{{ price3_n }}</td>
                             <td style="text-align: right;"><span>{{ price3 }}р.</span></td>
                           </tr>
                         {{/if}}
 
-                        {%- if item.price4 and item.price4 !=""  -%}
-                        <tr>
-                          <td>{{ item.price4_n }}</td>
-                          <td style="text-align: right;"><span>{{ item.price4 }}р.</span></td>
-                        </tr>
-                        {%- endif -%}
+                        {{#if price4 }}
+                          <tr>
+                            <td>{{ price4_n }}</td>
+                            <td style="text-align: right;"><span>{{ price4 }}р.</span></td>
+                          </tr>
+                        {{/if}}
 
                         {{#if prim }}
                         <tr>
@@ -341,7 +334,7 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                             <td colspan="2" style="font-size: 100%;">{{ desc }} 
               
                             {{#if url }}
-                              <a href="/kamaz-inf/motor/{{ url }}.html" class="btn btn-primary"> подробнее... </a>
+                              <a href="/kamaz-inf/motor/{{ url }}.html" > подробнее... </a>
                               
                             {{/if}}
                           </td>

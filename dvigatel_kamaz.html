@@ -134,22 +134,24 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                   {%- endif -%}
 
                   {%- if item.price2 -%}
+                  <!-- {%- if item.type == "cummins" -%} -->
                   <tr>
                     <td>{{ item.price2_n }}</td>
                     <td style="text-align: right;"><span>{{ item.price2 }}р.</span></td>
                   </tr>
+                  <!-- {%- endif -%} -->
                   {%- endif -%}
           
                   {%- if item.price3 -%}
-                  
+                  <!-- {%- if item.type == "cummins" -%} -->
                   <tr>
                     <td>{{ item.price3_n }}</td>
                     <td style="text-align: right;"><span>{{ item.price3 }}р.</span></td>
                   </tr>
-                  
-                  {%- endif -%}
-                  <!-- {%- if item.type == "cummins" -%} -->
                   <!-- {%- endif -%} -->
+                  {%- endif -%}
+                  
+                  
                   {%- if item.prim -%}
                   <tr>
                     <td colspan="2"> для {{ item.prim }} </td>
@@ -242,7 +244,7 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                       <table class="table">
                         <tr>
                           <td colspan="2">
-                            <a href="javascript:" onclick="show_dvigatel_popup({{id}});" class="nal-link" data-toggle="modal">
+                            <a href="/kamaz-inf/motor/{{ url }}.html" class="nal-link">
                               <span style="font-size:1.4em;">
                                 {{ name }}
                                 <span style="color:gray;font-size:0.7em;">{{ model }} </span>
@@ -258,22 +260,25 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                         {{/if}}
                 
                         {{#if price2 }}
+                        {{#if_eq type "cummins" }}  
                         <tr>
                           <td>{{ price2_n }}</td>
                           <td style="text-align: right;"><span>{{ price2 }}р.</span></td>
                         </tr>
+                        {{/if_eq}}
                         {{/if}}
                 
                         {{#if price3 }}
-                          
+                        {{#if_eq type "cummins" }}  
                           <tr>
                             <td>{{ price3_n }}</td>
                             <td style="text-align: right;"><span>{{ price3 }}р.</span></td>
                           </tr>
+                          {{/if_eq}}
                         {{/if}}
 
-                        <!-- {{#if_eq type "cummins" }} -->
-                          <!-- {{/if_eq}} -->
+                        
+                          
 
 
                         {{#if prim }}
