@@ -141,14 +141,15 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                   {%- endif -%}
           
                   {%- if item.price3 -%}
-                  {%- if item.type == "cummins" -%}
+                  
                   <tr>
                     <td>{{ item.price3_n }}</td>
                     <td style="text-align: right;"><span>{{ item.price3 }}р.</span></td>
                   </tr>
+                  
                   {%- endif -%}
-                  {%- endif -%}
-          
+                  <!-- {%- if item.type == "cummins" -%} -->
+                  <!-- {%- endif -%} -->
                   {%- if item.prim -%}
                   <tr>
                     <td colspan="2"> для {{ item.prim }} </td>
@@ -264,13 +265,16 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                         {{/if}}
                 
                         {{#if price3 }}
-                          {{#if_eq type "cummins" }}
+                          
                           <tr>
                             <td>{{ price3_n }}</td>
                             <td style="text-align: right;"><span>{{ price3 }}р.</span></td>
                           </tr>
-                          {{/if_eq}}
                         {{/if}}
+
+                        <!-- {{#if_eq type "cummins" }} -->
+                          <!-- {{/if_eq}} -->
+
 
                         {{#if prim }}
                         <tr>

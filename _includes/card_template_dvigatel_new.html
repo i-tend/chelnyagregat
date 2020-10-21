@@ -43,17 +43,25 @@
               <td style="text-align: right;"><span style="font-size:1.2em;">{{ product.price2 }}</span>&nbsp;</td>
             </tr>
             {%- endif -%}
-  
+
+            
             {%- if product.price3 != "" -%}
-            {%- if item.type == "cummins" -%}
+            <!-- {%- if item.type == "cummins" -%} -->
             <tr>
               <td>{{ product.price3_n }}</td>
               <td style="text-align: right;"><span style="font-size:1.2em;">{{ product.price3 }}</span>&nbsp;</td>
             </tr>
-            {%- endif -%}
+            <!-- {%- endif -%} -->
             {%- endif -%}
   
-              
+            
+            {%- if product.price4 and product.price4 != "" -%}
+            <tr>
+              <td>{{ product.price4_n }}</td>
+              <td style="text-align: right;"><span style="font-size:1.2em;">{{ product.price4 }}</span>&nbsp;</td>
+            </tr>
+            {%- endif -%}
+            
             {%- if product.prim != "" -%}
             <tr>
               <td colspan="2"> для {{ product.prim }} </td>
