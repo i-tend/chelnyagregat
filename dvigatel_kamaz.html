@@ -1,10 +1,9 @@
 ---
 layout: default_main
-title: Купить двигатель КамАЗ 740 и Cummins с доставкой по России - Челныагрегатцентр 
+title: Купить двигатель КамАЗ с кап.ремонта 740 и Cummins с доставкой по России - Челныагрегатцентр 
 description: Новые оригинальные двигатели КамАЗ в наличии в Москве и Наб.Челнах с доставкой по всей России. От надежного поставщика ЧелныАгрегатЦентр. Цена, описание, доставка в регионы России.
 metakeywords: Двигатели КамАЗ 740 Cummins купить продажа цена стоимость новые оригинал
 ---
-
 
   <!-- Header Area wrapper Starts -->
   <header id="header-wrap">
@@ -57,19 +56,15 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                 <div class="contents">
                   <ul>
                     <li style="margin-bottom:0px;">
-                      <h1 class="title text-left w-100">Двигатели на технику КамАЗ в наличии</h1>
+                      <h1 class="title text-left w-100">Двигатели на технику КамАЗ - новые и кап.ремонт</h1>
                     </li>
                     <li style="margin-top:0px;">
                       <h2 class="title w-100">от надежного поставщика </h2>
                     </li>
                     <li>&nbsp;</li>
-                    <li><i class="lni-check-mark-circle"></i> &nbsp;&nbsp;20 моделей в наличии в
-                      Москве
-                      и Наб.Челнах</li>
-                    <li><i class="lni-check-mark-circle"></i>&nbsp;&nbsp;10 лет на рынке
-                    </li>
-                    <li><i class="lni-check-mark-circle"></i> &nbsp;&nbsp;Гарантия на все
-                      агрегаты</li>
+                    <li><i class="lni-check-mark-circle"></i> &nbsp;&nbsp;20 моделей в наличии в Москве и Наб.Челнах</li>
+                    <li><i class="lni-check-mark-circle"></i>&nbsp;&nbsp;10 лет на рынке </li>
+                    <li><i class="lni-check-mark-circle"></i> &nbsp;&nbsp;Гарантия на все агрегаты</li>
                   </ul>
                 </div>
               </div>
@@ -101,7 +96,7 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
   <section id="catalog" class="section-padding">
     <div class="container text-center">
       <div class="section-header text-center">
-        <h2 class="section-title">Двигатели КамАЗ</h2>
+        <h2 class="section-title">Двигатели КамАЗ - каталог</h2>
         <div class="shape wow fadeInDown"></div>
         
       </div>
@@ -134,24 +129,26 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                   {%- endif -%}
 
                   {%- if item.price2 -%}
-                  <!-- {%- if item.type == "cummins" -%} -->
                   <tr>
                     <td>{{ item.price2_n }}</td>
                     <td style="text-align: right;"><span>{{ item.price2 }}р.</span></td>
                   </tr>
-                  <!-- {%- endif -%} -->
                   {%- endif -%}
           
-                  {%- if item.price3 -%}
-                  <!-- {%- if item.type == "cummins" -%} -->
+                  {%- if item.price3 and item.price3 !=""  -%}
                   <tr>
                     <td>{{ item.price3_n }}</td>
                     <td style="text-align: right;"><span>{{ item.price3 }}р.</span></td>
                   </tr>
-                  <!-- {%- endif -%} -->
                   {%- endif -%}
-                  
-                  
+
+                  {%- if item.price4 and item.price4 !=""  -%}
+                  <tr>
+                    <td>{{ item.price4_n }}</td>
+                    <td style="text-align: right;"><span>{{ item.price4 }}р.</span></td>
+                  </tr>
+                  {%- endif -%}
+          
                   {%- if item.prim -%}
                   <tr>
                     <td colspan="2"> для {{ item.prim }} </td>
@@ -159,10 +156,10 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                   {%- endif -%}
           
                   <tr>
-                    <td colspan="2" style="font-size: 92%;">{{ item.desc }}
+                    <td colspan="2" style="font-size: 100%;">{{ item.desc }}
           
                         {%- if item.url -%}
-                          <a href="/kamaz-inf/motor/{{ item.url }}.html"> подробнее... </a>
+                          <a href="/kamaz-inf/motor/{{ item.url }}.html" class=""> подробнее... </a>
                         {%- endif -%}
                     </td>
                   </tr>
@@ -173,7 +170,7 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
 
         {% endfor %}
 
-
+        
       </div>
       <div class="row text-left articles">
           <div class="col-md-1"></div>
@@ -260,26 +257,25 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                         {{/if}}
                 
                         {{#if price2 }}
-                        {{#if_eq type "cummins" }}  
                         <tr>
                           <td>{{ price2_n }}</td>
                           <td style="text-align: right;"><span>{{ price2 }}р.</span></td>
                         </tr>
-                        {{/if_eq}}
                         {{/if}}
                 
                         {{#if price3 }}
-                        {{#if_eq type "cummins" }}  
                           <tr>
                             <td>{{ price3_n }}</td>
                             <td style="text-align: right;"><span>{{ price3 }}р.</span></td>
                           </tr>
-                          {{/if_eq}}
                         {{/if}}
 
-                        
-                          
-
+                        {{#if price4 }}
+                          <tr>
+                            <td>{{ price4_n }}</td>
+                            <td style="text-align: right;"><span>{{ price4 }}р.</span></td>
+                          </tr>
+                        {{/if}}
 
                         {{#if prim }}
                         <tr>
@@ -335,10 +331,10 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                     
 
                         <tr>
-                            <td colspan="2" style="font-size: 92%;">{{ desc }} 
+                            <td colspan="2" style="font-size: 100%;">{{ desc }} 
               
                             {{#if url }}
-                              <a href="/kamaz-inf/motor/{{ url }}.html"> подробнее... </a>
+                              <a href="/kamaz-inf/motor/{{ url }}.html" > подробнее... </a>
                               
                             {{/if}}
                           </td>
@@ -348,7 +344,7 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
                           <tr>
                               <td colspan="2">
                                   <strong>Запросить предложение</strong>
-                                  <div class="" style="float: right;"> <a href="tel:+78552783500" class="color_unset" >(8552) 78-35-00</a></div>
+                                  <div class="" style="float: right;" class="color_unset" > 8(8552) 78-35-00</div>
                                 </td>            
                             </tr>
                           <tr>
@@ -399,13 +395,13 @@ metakeywords: Двигатели КамАЗ 740 Cummins купить прода�
 
   <section id="pricing" class="section-padding  bg-gray">
     <div class="container text-center justify-content-center">
-
-        <p> <img src="/assets/img/dvigatels/new/kamaz_dvigatel_01.jpg" alt="Двигатели КамАЗ"/> </p>
-        <p> <img src="/assets/img/dvigatels/new/kamaz_dvigatel_03.jpg" alt="Двигатели КамАЗ"/> </p>
-        <p> <img src="/assets/img/dvigatels/new/kamaz_dvigatel_04.jpg" alt="Двигатели КамАЗ"/> </p>
-        <p> <img src="/assets/img/dvigatels/new/kamaz_dvigatel_05.jpg" alt="Двигатели КамАЗ"/> </p>
-        <p> <img src="/assets/img/dvigatels/new/kamaz_dvigatel_06.jpg" alt="Двигатели КамАЗ"/> </p>
-        <p> <img src="/assets/img/dvigatels/new/kamaz_dvigatel_12.jpg" alt="Двигатели КамАЗ"/> </p>
+        <p> <img src="/assets/img/dvigatels/remont/kamaz_dvigatel_remont_10.jpg" alt="Двигатели КамАЗ"/> </p>
+        <p> <img src="/assets/img/dvigatels/remont/kamaz_dvigatel_remont_14.jpg" alt="Двигатели КамАЗ"/> </p>
+        <p> <img src="/assets/img/dvigatels/remont/kamaz_dvigatel_remont_20.jpg" alt="Двигатели КамАЗ"/> </p>
+        <p> <img src="/assets/img/dvigatels/remont/kamaz_dvigatel_remont_24.jpg" alt="Двигатели КамАЗ"/> </p>
+        <p> <img src="/assets/img/dvigatels/remont/kamaz_dvigatel_remont_25.jpg" alt="Двигатели КамАЗ"/> </p>
+        <p> <img src="/assets/img/dvigatels/remont/kamaz_dvigatel_remont_52.jpg" alt="Двигатели КамАЗ"/> </p>
+        <p> <img src="/assets/img/dvigatels/remont/kamaz_dvigatel_remont_54.jpg" alt="Двигатели КамАЗ"/> </p>
         <p></p>
         <p></p>
 
